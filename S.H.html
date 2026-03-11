@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.H</title>
+    <style>
+      body {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+        background-color: rgb(253, 249, 184);
+      }
+      .main { 
+        width: 100%;
+      }
+      .container {
+        background-color: rgb(82, 21, 21);
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 5px 15px;
+        box-sizing: border-box;
+        width: 600px;
+        border-radius: 10px;
+        border: 2.5px solid black;
+        box-shadow: 0 4px 7px 2px gray;
+        text-align: center;
+        transition: top 0.3;
+      }
+      .container.hidden-bg {
+        background-color: rgba(82, 21, 21, 0);
+      }
+      .container a {
+        color: rgba(253, 242, 86, 0.952);
+        text-decoration: none;
+        font-size: 25px;
+        padding: 5px 15px;
+        margin: 3px;
+        margin-bottom: 2px;
+      }
+      .container a:hover {
+         color: rgba(219, 206, 26, 0.815);
+         text-shadow: 0 2px 3px darkgray;
+      }
+      h1, p {
+        text-align: center;
+        font-family: Verdana, Tahoma, sans-serif;
+      }
+      #hoodies {
+        display: block;
+      }
+      #full, #couples, #men, #about-us, #contact-us {
+        display: none;
+      }
+      section {
+        background-color: rgb(12, 3, 37);
+        color: rgba(253, 242, 86, 0.952);
+        border-radius: 10px;
+        border: 2px solid black;
+        box-sizing: border-box;
+        text-align: center;
+        box-shadow: 0 4px 7px 2px gray;
+        margin: 3px 10px;
+      }
+      .variables a {
+        text-decoration: none;
+        color: rgb(80, 34, 34); 
+        text-shadow: 0 1.5px 1.5px  rgb(179, 170, 45);
+        margin: 15px;
+        font-weight: bold;
+        font-size: 25px;
+      }
+      .variables a:hover {
+        color: rgb(54, 16, 16); 
+        text-shadow: 0 2px 2px rgb(228, 218, 81);
+      }
+      .slider {
+        position: relative;
+        width: 500px;
+        height: 250px;
+        margin: auto;
+
+        display: flex;
+        align-items: center;
+      }
+      .slider-track {
+        display: flex;
+        gap: 20px;
+        scroll-behavior: smooth;
+        overflow-x: auto;
+      }
+      .slider-track::-webkit-scrollbar {
+        display: none;
+      }
+      .slide {
+        width: 250px;
+        margin-right: 20px;
+        text-align: center;
+      }
+      .slide img {
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        flex-shrink: 0;
+      }
+      .slider button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        font-size: 24px;
+        padding: 5px 10px;
+        cursor: pointer;
+        z-index: 10;
+      }
+      .slider button.prev { 
+        left: 0;
+      }
+      .slider button.next { 
+        right: 0;
+      }
+    </style>
+</head>
+<body>
+    <div class="main">
+     <nav class="container">
+        <ul>
+            <a href="#menu" onclick="showMainSection('menu', event)">Menu</a>
+            <a href="#about-us" onclick="showMainSection('about-us', event)">About Us</a>
+            <a href="#contact-us" onclick="showMainSection('contact-us', event)">Contact Us</a>
+        </ul>
+     </nav>
+    <br><br>
+    <br><br>
+    <h1>S.H</h1>
+    <p>Diffrent defination for the sports outfit</p>
+<br>
+<section id="menu">
+  <h2>Menu</h2>
+  <p>All what you looking for will find it here.</p>
+  <nav class="variables">
+    <a href="#hoodies" onclick="showMenuSubsection('hoodies', event); return false;">Hoodies</a>
+    <a href="#full" onclick="showMenuSubsection('full', event); return false;">Full</a>
+    <a href="#couples" onclick="showMenuSubsection('couples', event); return false;">Couples</a>
+    <a href="#men" onclick="showMenuSubsection('men', event); return false;">Men</a>
+  </nav>
+
+    <section id="hoodies">
+    <h2></h2>
+    <div class="slider">
+    <button class="prev" onclick="slideLeft(this)">&#60;</button>
+
+     <div class="slider-track">
+    <div class="slide"><img src="hoody1.jpg" alt="hoodies"></div>
+    <div class="slide"><img src="hoody2.jpg" alt="hoodies"></div>
+    <div class="slide"><img src="hoody3.jpg" alt="hoodies"></div>
+    <div class="slide"><img src="hoody4.jpg" alt="hoodies"></div>
+    <div class="slide"><img src="hoody5.jpg" alt="hoodies"></div>
+    </div>
+
+    <button class="next" onclick="slideRight(this)">&#62;</button>
+    </div>
+    </section>
+    <section id="full">
+      <h2></h2>
+      <div class="slider">
+      <button class="prev" onclick="slideLeft(this)">&#60;</button>
+
+      <div class="slider-track">
+      <div class="slide"><img src="full1.jfif" alt="full"></div>
+      <div class="slide"><img src="full2.jfif" alt="full"></div>
+      <div class="slide"><img src="full3.jfif" alt="full"></div>
+      <div class="slide"><img src="full4.jpg" alt="full"></div>      
+      <div class="slide"><img src="full5.jpg" alt="full"></div>     
+      </div>
+      
+      <button class="next" onclick="slideRight(this)">&#62;</button>
+      </div>
+    </section>
+    <section id="couples">
+      <h2></h2>
+      <div class="slider">
+      <button class="prev" onclick="slideLeft(this)">&#60;</button>
+
+      <div class="slider-track">
+      <div class="slide"><img src="couples1.jpg" alt="couples"></div>
+      <div class="slide"><img src="couples2.jfif" alt="couples"></div>
+      <div class="slide"><img src="couples3.jfif" alt="couples"></div>
+      <div class="slide"><img src="couples4.jpg" alt="couples"></div>      
+      <div class="slide"><img src="couples5.webp" alt="couples"></div>
+      </div>
+
+      <button class="next" onclick="slideRight(this)">&#62;</button>
+      </div>
+    </section>
+     <section id="men">
+      <h2></h2>
+      <div class="slider">
+       <button class="prev" onclick="slideLeft(this)">&#60;</button>
+
+       <div class="slider-track">
+      <div class="slide"><img src="men1.jfif" alt="men"></div>
+      <div class="slide"><img src="men2.jpg" alt="men"></div>
+      <div class="slide"><img src="men2.webp" alt="men"></div>
+      <div class="slide"><img src="men4.jpg" alt="men"></div>
+      <div class="slide"><img src="men5.jpg" alt="men"></div>
+      </div>
+
+      <button class="next" onclick="slideRight(this)">&#62;</button>
+      </div>
+    </section>
+</section>
+
+<section id="about-us">
+  <h2>About us</h2>
+</section>
+<section id="contact-us">
+  <h2>Contact us</h2>
+</section>
+
+    </div>
+    <script>
+      
+      let lastScroll = 0
+      const nav = document.querySelector(".container")
+
+      window.addEventListener("scroll", () => {
+        let currentScroll = window.pageYOffset
+
+        if(currentScroll > lastScroll && currentScroll > 100 ){
+          nav.style.top = "-80px"
+          nav.classList.add("hidden-bg");
+        } else if(currentScroll < lastScroll) {
+          nav.style.top = "0px"
+          nav.classList.remove("hidden-bg");
+        }
+
+        lastScroll = currentScroll
+      })
+      
+      const mainSections = ["menu", "about-us", "contact-us"]
+
+      const menuSubsections = ["hoodies", "full", "couples", "men"]
+
+
+      function showMainSection(id, event) {
+        event.preventDefault();
+
+       mainSections.forEach(section => {
+         document.getElementById(section).style.display = "none";
+       });
+
+       document.getElementById(id).style.display = "block";
+
+       if(id === "menu") {
+        menuSubsections.forEach(sub => {
+          document.getElementById(sub).style.display = "none";
+        });
+          
+         document.getElementById("hoodies").style.display = "block";
+         }
+      }
+
+      function showMenuSubsection(id, event) {
+        event.preventDefault();
+
+        menuSubsections.forEach(sub => {
+          document.getElementById(sub).style.display = "none";
+        })
+          document.getElementById(id).style.display = "block";
+
+      }
+
+        const sliders =
+         document.querySelectorAll(".slider-track")
+
+        function slideRight(btn) {
+          const track = 
+          btn.parentElement.querySelector(".slider-track")
+          track.scrollLeft += 300
+        }
+
+        function slideLeft(btn) {
+          const track = 
+          btn.parentElement.querySelector(".slider-track")
+          track.scrollLeft -= 300
+        }
+
+        let direction = 1
+
+        setInterval(() => {
+
+          sliders.forEach(track => {
+
+          const maxScroll = track.scrollWidth - track.clientWidth 
+
+          const randomPosition = Math.random() * maxScroll
+
+          track.scrollTo({
+            left: randomPosition,
+            behavior: "smooth"
+          })
+        })
+
+          }, 3000)
+    </script>
+</body>
+</html>
